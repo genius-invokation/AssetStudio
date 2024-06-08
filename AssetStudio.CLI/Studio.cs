@@ -310,7 +310,7 @@ namespace AssetStudio.CLI
                 case AssetBundle m_AssetBundle:
                     foreach (var m_Container in m_AssetBundle.m_Container)
                     {
-                        var preloadIndex = m_Container.Value.preloadIndex;
+                        var preloadIndex = Math.Max(0, m_Container.Value.preloadIndex);
                         var preloadSize = m_Container.Value.preloadSize;
                         var preloadEnd = Math.Min(m_AssetBundle.m_PreloadTable.Count(), preloadIndex + preloadSize);
                         for (int k = preloadIndex; k < preloadEnd; k++)
