@@ -312,7 +312,7 @@ namespace AssetStudio.CLI
                     {
                         var preloadIndex = m_Container.Value.preloadIndex;
                         var preloadSize = m_Container.Value.preloadSize;
-                        var preloadEnd = preloadIndex + preloadSize;
+                        var preloadEnd = Math.Min(m_AssetBundle.m_PreloadTable.Count(), preloadIndex + preloadSize);
                         for (int k = preloadIndex; k < preloadEnd; k++)
                         {
                             containers.Add((m_AssetBundle.m_PreloadTable[k], m_Container.Key));
